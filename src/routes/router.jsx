@@ -6,6 +6,9 @@ import About from "../Components/About/About";
 import ContactUs from "../Components/ContactUs/ContactUs";
 import Home from "../Components/Home/Home";
 import LearnMore from "../Components/LearnMore/LearnMore";
+import AuthLayout from "../Layout/AuthLayout";
+import Login from "../Components/Login/Login";
+import Registration from "../Components/Registration/Registration";
 
 const router = createBrowserRouter([
     {
@@ -31,6 +34,21 @@ const router = createBrowserRouter([
                 loader: () => fetch('/services.json')
             },
 
+            {
+                path: "/auth",
+                element: <AuthLayout></AuthLayout>,
+                children: [
+                    {
+                        path: "/auth/login",
+                        element: <Login></Login>
+                    },
+                    {
+                        path: "/auth/register",
+                        element: <Registration></Registration>
+                    }
+                ]
+
+            },
 
             {
                 path: "/about",
