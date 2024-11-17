@@ -1,8 +1,9 @@
+import { Link } from "react-router-dom";
 
 
 const ServicesCard = ({ data }) => {
 
-    const { image, service_name, category, pricing, counselor } = data
+    const { image, service_name, category, pricing, counselor, id } = data
 
     return (
         <div className="space-y-2 bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 border border-gray-100 p-5 rounded-xl
@@ -17,7 +18,7 @@ const ServicesCard = ({ data }) => {
             <h3 className="text-white">Name of Counselor: <span className="text-yellow-400">{counselor}</span> </h3>
 
             <div>
-                <button className="btn bg-[#ff7029] border-none text-white font-bold">Learn More</button>
+                <Link to={`/services/${id}`} className="btn bg-[#ff7029] border-none text-white font-bold">Learn More</Link>
             </div>
         </div>
     );

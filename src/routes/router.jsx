@@ -5,6 +5,7 @@ import Services from "../Components/Services/Services";
 import About from "../Components/About/About";
 import ContactUs from "../Components/ContactUs/ContactUs";
 import Home from "../Components/Home/Home";
+import LearnMore from "../Components/LearnMore/LearnMore";
 
 const router = createBrowserRouter([
     {
@@ -20,8 +21,16 @@ const router = createBrowserRouter([
 
             {
                 path: "/services",
-                element: <Services></Services>
+                element: <Services></Services>,
+                loader: () => fetch('/services.json')
             },
+
+            {
+                path: "/services/:id",
+                element: <LearnMore></LearnMore>,
+                loader: () => fetch('/services.json')
+            },
+
 
             {
                 path: "/about",
