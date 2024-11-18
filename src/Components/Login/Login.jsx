@@ -1,12 +1,19 @@
 import { useContext } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
+
+import Swal from "sweetalert2";
+import 'sweetalert2/src/sweetalert2.scss'
 
 
 const Login = () => {
 
 
     const { userLogin, setUser } = useContext(AuthContext)
+    const location = useLocation()
+    const navigate = useNavigate()
+
+    console.log(location)
 
     const handleSubmit = (event) => {
         event.preventDefault()
@@ -21,11 +28,30 @@ const Login = () => {
             .then(result => {
                 setUser(result.user)
                 console.log(result.user);
+                navigate(location?.state ? location.state : "/")
+                Swal.fire({
+                    title: 'success!',
+                    text: 'Successfully Logged in Your Account',
+                    icon: 'success',
+                    confirmButtonText: 'Cancel',
+                    customClass: {
+                        confirmButton: 'btn btn-success'
+                    }
+                })
+
 
             })
 
-            .catch(error => {
-                alert(error.message)
+            .catch(err => {
+                Swal.fire({
+                    title: 'Error!',
+                    text: "Username or Password isn't correct",
+                    icon: 'error',
+                    confirmButtonText: 'Cancel',
+                    customClass: {
+                        confirmButton: 'btn btn-danger'
+                    }
+                })
             })
 
     }

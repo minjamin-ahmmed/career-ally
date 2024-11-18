@@ -1,15 +1,17 @@
 import { useContext, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import Swal from "sweetalert2";
 import 'sweetalert2/src/sweetalert2.scss'
 
 const Registration = () => {
 
-    const { createNewUser, user, setUser } = useContext(AuthContext)
+    const { createNewUser, user, setUser, updateUserProfile } = useContext(AuthContext)
 
     const [errorMessage, setErrorMessage] = useState('')
     const [success, setSuccess] = useState(false)
+
+    const navigate = useNavigate()
 
     const handleSubmit = (event) => {
         event.preventDefault()
@@ -62,7 +64,15 @@ const Registration = () => {
         createNewUser(email, password)
             .then(result => {
                 setUser(result.user)
-                console.log(result.user);
+                updateUserProfile({ displayName: name, photoURL: photo })
+                    .then(() => {
+                        navigate('/')
+                    })
+                    .catch(err => {
+                        console.log(err);
+
+                    })
+
                 setSuccess(true)
                 Swal.fire({
                     title: 'success!',

@@ -35,6 +35,11 @@ const Navbar = () => {
                         <NavLink to="/services">Services</NavLink>
                         <NavLink to="/about">About</NavLink>
                         <NavLink to="/contactUs">Contact Us</NavLink>
+                        {
+                            user && <>
+                                <NavLink to="/myprofile">My Profile</NavLink>
+                            </>
+                        }
 
                     </ul>
                 </div>
@@ -46,13 +51,28 @@ const Navbar = () => {
                     <NavLink to="/services">Services</NavLink>
                     <NavLink to="/about">About</NavLink>
                     <NavLink to="/contactUs">Contact Us</NavLink>
+                    {
+                        user && <>
+                            <NavLink to="/myprofile">My Profile</NavLink>
+                        </>
+                    }
 
                 </ul>
             </div>
             <div className="navbar-end">
+
+                {user?.email && (
+                    <span className="text-[#ff7029] font-semibold hidden lg:block mr-2">
+
+                        {user.displayName}
+                    </span>
+                )}
+
                 {
                     user && user?.email ? (
+
                         <button onClick={logOut} className="btn bg-[#ff7029] border-none text-white">LogOut</button>
+
                     ) : (<Link to={"/auth/login"} className="btn bg-[#ff7029] border-none text-white">Login</Link>)
                 }
 

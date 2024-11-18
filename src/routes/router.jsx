@@ -10,6 +10,7 @@ import AuthLayout from "../Layout/AuthLayout";
 import Login from "../Components/Login/Login";
 import Registration from "../Components/Registration/Registration";
 import PrivateRoute from "./PrivateRoute";
+import Myprofile from "../Components/Myprofile/Myprofile";
 
 const router = createBrowserRouter([
     {
@@ -33,6 +34,11 @@ const router = createBrowserRouter([
                 path: "/services/:id",
                 element: <PrivateRoute> <LearnMore></LearnMore> </PrivateRoute>,
                 loader: () => fetch('/services.json')
+            },
+
+            {
+                path: "/myprofile",
+                element: <Myprofile></Myprofile>,
             },
 
             {
