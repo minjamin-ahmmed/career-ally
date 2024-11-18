@@ -1,21 +1,27 @@
+import React, { useEffect } from "react";
 import { NavLink } from "react-router-dom";
-import missionImg from "../../assets/our-mission.jpg"
-import vissionImg from "../../assets/our-vision.jpg"
+import missionImg from "../../assets/our-mission.jpg";
+import vissionImg from "../../assets/our-vision.jpg";
 
-
-
-
-
-
-
-
+// Import AOS
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const About = () => {
+    // Initialize AOS when the component mounts
+    useEffect(() => {
+        AOS.init({
+            duration: 1000, // Animation duration (optional)
+            easing: "ease-in-out", // Easing function (optional)
+            once: true, // Whether animation should happen only once
+        });
+    }, []);
+
     return (
         <div className="min-h-screen bg-[#011B1c] text-white py-10 px-5">
             <div className="max-w-6xl mx-auto space-y-16">
                 {/* Hero Section */}
-                <section className="text-center">
+                <section className="text-center" data-aos="fade-up">
                     <h1 className="text-5xl font-extrabold text-[#ff7029] mb-4">Who We Are</h1>
                     <p className="text-lg lg:text-xl text-gray-300 leading-relaxed">
                         At <span className="font-bold text-[#ff7029]">CareerAlly</span>, we’re more than just a service — we’re a
@@ -26,7 +32,7 @@ const About = () => {
                 </section>
 
                 {/* Mission Section */}
-                <section className="flex flex-col lg:flex-row items-center gap-10">
+                <section className="flex flex-col lg:flex-row items-center gap-10" data-aos="fade-up">
                     <div className="lg:w-1/2">
                         <img
                             src={missionImg}
@@ -46,7 +52,7 @@ const About = () => {
                 </section>
 
                 {/* Vision Section */}
-                <section className="flex flex-col lg:flex-row items-center gap-10 lg:flex-row-reverse">
+                <section className="flex flex-col lg:flex-row items-center gap-10 lg:flex-row-reverse" data-aos="fade-up">
                     <div className="lg:w-1/2">
                         <img
                             src={vissionImg}
@@ -66,30 +72,30 @@ const About = () => {
                 </section>
 
                 {/* Core Values Section */}
-                <section>
+                <section data-aos="fade-up">
                     <h2 className="text-4xl font-bold text-center text-[#ff7029] mb-8">Our Core Values</h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-gray-300">
-                        <div className="p-6 bg-[#011b1c] border border-orange-600 rounded-lg shadow-md hover:shadow-lg">
+                        <div className="p-6 bg-[#011b1c] border border-orange-600 rounded-lg shadow-md hover:shadow-lg" data-aos="fade-up">
                             <h3 className="text-xl font-bold text-[#ff7029] mb-2">Integrity</h3>
                             <p>We uphold transparency and ethical principles in everything we do.</p>
                         </div>
-                        <div className="p-6 bg-[#011b1c] border border-orange-600 rounded-lg shadow-md hover:shadow-lg">
+                        <div className="p-6 bg-[#011b1c] border border-orange-600 rounded-lg shadow-md hover:shadow-lg" data-aos="fade-up">
                             <h3 className="text-xl font-bold text-[#ff7029] mb-2">Innovation</h3>
                             <p>We embrace forward-thinking solutions to stay ahead in a changing world.</p>
                         </div>
-                        <div className="p-6 bg-[#011b1c] border border-orange-600 rounded-lg shadow-md hover:shadow-lg">
+                        <div className="p-6 bg-[#011b1c] border border-orange-600 rounded-lg shadow-md hover:shadow-lg" data-aos="fade-up">
                             <h3 className="text-xl font-bold text-[#ff7029] mb-2">Empowerment</h3>
                             <p>We believe in fostering confidence and strength in every individual.</p>
                         </div>
-                        <div className="p-6 bg-[#011b1c] border border-orange-600 rounded-lg shadow-md hover:shadow-lg">
+                        <div className="p-6 bg-[#011b1c] border border-orange-600 rounded-lg shadow-md hover:shadow-lg" data-aos="fade-up">
                             <h3 className="text-xl font-bold text-[#ff7029] mb-2">Collaboration</h3>
                             <p>We thrive through teamwork and building meaningful partnerships.</p>
                         </div>
-                        <div className="p-6 bg-[#011b1c] border border-orange-600 rounded-lg shadow-md hover:shadow-lg">
+                        <div className="p-6 bg-[#011b1c] border border-orange-600 rounded-lg shadow-md hover:shadow-lg" data-aos="fade-up">
                             <h3 className="text-xl font-bold text-[#ff7029] mb-2">Excellence</h3>
                             <p>We are committed to delivering exceptional results in every endeavor.</p>
                         </div>
-                        <div className="p-6 bg-[#011b1c] border border-orange-600 rounded-lg shadow-md hover:shadow-lg">
+                        <div className="p-6 bg-[#011b1c] border border-orange-600 rounded-lg shadow-md hover:shadow-lg" data-aos="fade-up">
                             <h3 className="text-xl font-bold text-[#ff7029] mb-2">Inclusivity</h3>
                             <p>We celebrate diversity and promote equality in all our practices.</p>
                         </div>
@@ -97,7 +103,7 @@ const About = () => {
                 </section>
 
                 {/* Call to Action */}
-                <section className="text-center py-10">
+                <section className="text-center py-10" data-aos="fade-up">
                     <h2 className="text-4xl font-bold text-[#ff7029] mb-4">Join Us on This Journey</h2>
                     <p className="text-lg text-gray-300 mb-6">
                         Whether you’re seeking career guidance, professional training, or simply a

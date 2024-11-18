@@ -9,6 +9,8 @@ import img5 from "../../assets/slider5.jpg";
 import { Navigation, Pagination } from 'swiper/modules';
 import { NavLink } from 'react-router-dom';
 
+import 'animate.css';
+
 const Slider = () => {
     return (
         <Swiper
@@ -39,7 +41,7 @@ const Slider = () => {
                 <div className='relative w-full h-full'>
                     <img src={img4} alt="Slider 1" className="w-full h-full  lg:object-cover md:object-cover filter brightness-50" />
                     <div className="absolute inset-0 bg-[#011B1C] bg-opacity-40">
-                        <div className='mt-10 lg:mt-40 w-[90%] lg:w-[40%] ml-5 lg:ml-[5%] p-10 bg-gray-700 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 border border-gray-100'>
+                        <div className='mt-10 lg:mt-40 w-[90%] lg:w-[40%] ml-5 lg:ml-[5%] p-10 bg-gray-700 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 border border-gray-100 animate__animated animate__backInLeft' style={{ animationDuration: '3s', animationDelay: '0.2s' }}>
                             <p className="text-[#FF7029] font-semibold drop-shadow-lg">
                                 You are in safe hands
                             </p>
@@ -61,7 +63,7 @@ const Slider = () => {
                 <div className='relative w-full h-full'>
                     <img src={img2} alt="Slider 1" className="w-full h-full  lg:object-cover md:object-cover filter brightness-50" />
                     <div className="absolute inset-0 bg-[#011B1C] bg-opacity-40">
-                        <div className='mt-10 lg:mt-40 w-[90%] lg:w-[40%] ml-5 lg:ml-20 p-10 bg-gray-700 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 border border-gray-100'>
+                        <div className='mt-10 lg:mt-40 w-[90%] lg:w-[40%] ml-5 lg:ml-20 p-10 bg-gray-700 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 border border-gray-100 animate__animated animate__backInRight' style={{ animationDuration: '3s', animationDelay: '0.2s' }}>
                             <p className="text-[#FF7029] font-semibold drop-shadow-lg">
                                 You are in safe hands
                             </p>
@@ -82,7 +84,7 @@ const Slider = () => {
                 <div className='relative w-full h-full'>
                     <img src={img1} alt="Slider 1" className="w-full h-full  lg:object-cover md:object-cover filter brightness-50" />
                     <div className="absolute inset-0 bg-[#011B1C] bg-opacity-40">
-                        <div className='mt-10 lg:mt-40 w-[90%] lg:w-[40%] ml-5 lg:ml-[5%] p-10 bg-gray-700 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 border border-gray-100'>
+                        <div className='mt-10 lg:mt-40 w-[90%] lg:w-[40%] ml-5 lg:ml-[5%] p-10 bg-gray-700 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 border border-gray-100 animate__animated animate__backInDown' style={{ animationDuration: '3s', animationDelay: '0.2s' }}>
                             <p className="text-[#FF7029] font-semibold drop-shadow-lg">
                                 You are in safe hands
                             </p>
@@ -100,8 +102,8 @@ const Slider = () => {
                 <div className='relative w-full h-full'>
                     <img src={img5} alt="Slider 1" className="w-full h-full  lg:object-cover md:object-cover filter brightness-50" />
                     <div className="absolute inset-0 bg-[#011B1C] bg-opacity-40">
-                        <div className='mt-10 lg:mt-40 w-[90%] lg:w-[50%] ml-5 lg:ml-[25%] p-10 bg-gray-700 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 border border-gray-100'>
-                            <p className="text-[#FF7029] font-semibold drop-shadow-lg">
+                        <div className='mt-10 lg:mt-40 w-[90%] lg:w-[50%] ml-5 lg:ml-[25%] p-10 bg-gray-700 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 border border-gray-100 animate__animated animate__backInUp' style={{ animationDuration: '3s', animationDelay: '0.2s' }}>
+                            <p className="text-[#FF7029] font-semibold drop-shadow-lg  " >
                                 You are in safe hands
                             </p>
                             <h1 className='text-white font-bold text-xl lg:text-4xl mt-2'>Unlock your potential and take control of your career. Expert guidance makes all the difference.</h1>

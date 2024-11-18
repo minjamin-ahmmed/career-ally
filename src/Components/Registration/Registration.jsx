@@ -3,6 +3,9 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import Swal from "sweetalert2";
 import 'sweetalert2/src/sweetalert2.scss'
+import { FcGoogle } from "react-icons/fc";
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import auth from "../../firebase/firebase.config";
 
 const Registration = () => {
 
@@ -58,9 +61,6 @@ const Registration = () => {
         }
 
 
-
-
-
         createNewUser(email, password)
             .then(result => {
                 setUser(result.user)
@@ -94,6 +94,20 @@ const Registration = () => {
             })
 
 
+    }
+
+
+    const provider = new GoogleAuthProvider()
+
+    const handleGoogleSignIn = () => {
+        signInWithPopup(auth, provider)
+            .then((result) => {
+                console.log(result.user)
+            })
+
+            .catch((error) => {
+                console.log("ERROR", error)
+            })
     }
 
 
@@ -140,6 +154,10 @@ const Registration = () => {
                 </div>
                 <div className="form-control mt-6">
                     <button className="btn bg-[#ff7029] border-none font-bold text-white">Register</button>
+                </div>
+
+                <div className="form-control mt-6">
+                    <button onClick={handleGoogleSignIn} className="btn bg-[#011b1c] font-bold text-[#ff7029] border border-[#ff7029]"> <FcGoogle className="text-lg" /> Login with Google</button>
                 </div>
 
                 <h2 className="text-white text-sm">Already have an account? <NavLink to="/auth/login" className="text-[#ff7029] font-semibold">Login</NavLink> </h2>

@@ -1,4 +1,5 @@
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+import 'animate.css';
 
 const ContactUs = () => {
     return (
@@ -6,7 +7,7 @@ const ContactUs = () => {
             <div className="max-w-6xl mx-auto">
                 {/* Header */}
                 <div className="text-center mb-12">
-                    <h1 className="text-4xl lg:text-6xl font-bold text-[#ff7029] mb-4">
+                    <h1 className="text-4xl lg:text-6xl font-bold text-[#ff7029] mb-4 animate__animated animate__backInDown" style={{ animationDuration: '3s', animationDelay: '0.10s' }}>
                         Get in Touch with Us
                     </h1>
                     <p className="text-lg lg:text-xl text-gray-400">
@@ -15,9 +16,10 @@ const ContactUs = () => {
                 </div>
 
                 {/* Contact Cards */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 animate__animated animate__backInLeft" style={{ animationDuration: '3s', animationDelay: '0.2s' }}>
                     {/* Phone */}
                     <div className="bg-[#011b1ce0] rounded-lg p-6 shadow-md text-center">
+
                         <FaPhoneAlt className="text-4xl text-[#ff7029] mx-auto mb-4" />
                         <h3 className="text-2xl font-semibold mb-2">Phone</h3>
                         <p className="text-gray-400">+880 1990 560-989</p>
@@ -52,14 +54,16 @@ const ContactUs = () => {
                             <input
                                 type="text"
                                 placeholder="Your Name"
-                                className="w-full p-4 rounded-lg bg-[#011b1c] text-white border border-gray-700 focus:outline-none focus:ring-2 focus:ring-[#ff7029]"
+                                className="w-full p-4 rounded-lg bg-[#011b1c] text-white border border-gray-700 focus:outline-none focus:ring-2 focus:ring-[#ff7029] animate__animated animate__backInLeft"
+                                style={{ animationDuration: '3s', animationDelay: '0.2s' }}
                                 required
                             />
                             {/* Email */}
                             <input
                                 type="email"
                                 placeholder="Your Email"
-                                className="w-full p-4 rounded-lg bg-[#011b1c] text-white border border-gray-700 focus:outline-none focus:ring-2 focus:ring-[#ff7029]"
+                                className="w-full p-4 rounded-lg bg-[#011b1c] text-white border border-gray-700 focus:outline-none focus:ring-2 focus:ring-[#ff7029] animate__animated animate__backInRight"
+                                style={{ animationDuration: '3s', animationDelay: '0.2s' }}
                                 required
                             />
                         </div>
@@ -67,14 +71,16 @@ const ContactUs = () => {
                         <textarea
                             rows="6"
                             placeholder="Your Message"
-                            className="w-full p-4 rounded-lg bg-[#011b1c] text-white border border-gray-700 focus:outline-none focus:ring-2 focus:ring-[#ff7029]"
+                            className="w-full p-4 rounded-lg bg-[#011b1c] text-white border border-gray-700 focus:outline-none focus:ring-2 focus:ring-[#ff7029] animate__animated animate__backInUp"
+                            style={{ animationDuration: '3s', animationDelay: '0.2s' }}
                             required
                         ></textarea>
                         {/* Submit Button */}
                         <div className="text-center">
                             <button
                                 type="submit"
-                                className="btn bg-[#ff7029] hover:bg-orange-600 border-none text-white text-lg font-semibold px-8 py-3 rounded-lg"
+                                className="btn bg-[#ff7029] hover:bg-orange-600 border-none text-white text-lg font-semibold px-8 py-3 rounded-lg animate__animated animate__backInDown"
+                                style={{ animationDuration: '3s', animationDelay: '0.2s' }}
                             >
                                 Send Message
                             </button>

@@ -4,6 +4,9 @@ import { AuthContext } from "../../Provider/AuthProvider";
 
 import Swal from "sweetalert2";
 import 'sweetalert2/src/sweetalert2.scss'
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { FcGoogle } from "react-icons/fc";
+import auth from "../../firebase/firebase.config";
 
 
 const Login = () => {
@@ -56,6 +59,19 @@ const Login = () => {
 
     }
 
+    const provider = new GoogleAuthProvider()
+
+    const handlGoogleSignIn = () => {
+        signInWithPopup(auth, provider)
+            .then((result) => {
+                console.log(result.user)
+            })
+
+            .catch((error) => {
+                console.log("ERROR", error)
+            })
+    }
+
 
 
     return (
@@ -82,6 +98,11 @@ const Login = () => {
                 <div className="form-control mt-6">
                     <button className="btn bg-[#ff7029] border-none font-bold text-white">Login</button>
                 </div>
+
+                <div className="form-control mt-6">
+                    <button onClick={handlGoogleSignIn} className="btn bg-[#011b1c] font-bold text-[#ff7029] border border-[#ff7029]"> <FcGoogle className="text-lg" /> Login with Google</button>
+                </div>
+
 
                 <h2 className="text-white text-sm">Don&apos;t have an account? <NavLink to="/auth/register" className="text-[#ff7029] font-semibold">register</NavLink> </h2>
             </form>
