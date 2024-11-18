@@ -62,18 +62,26 @@ const Navbar = () => {
             <div className="navbar-end">
 
                 {user?.email && (
-                    <span className="text-[#ff7029] font-semibold hidden lg:block mr-2">
+                    <div className="relative group w-14 h-14 mr-2 border-2 border-[#ff7029] rounded-full">
 
-                        {user.displayName}
-                    </span>
+                        <img
+                            className="w-full h-full rounded-full"
+                            src={user.photoURL}
+                            alt={`${user.displayName}'s Avatar`}
+                        />
+
+                        <div className="absolute bottom-[-30px] left-1/2 transform -translate-x-1/2 w-max bg-gray-800 text-white text-sm px-3 py-1 rounded opacity-0 group-hover:opacity-100 group-hover:translate-y-[-10px] transition-all duration-200">
+                            {user.displayName}
+                        </div>
+                    </div>
                 )}
 
                 {
                     user && user?.email ? (
 
-                        <button onClick={logOut} className="btn bg-[#ff7029] border-none text-white">LogOut</button>
+                        <button onClick={logOut} className="btn bg-[#ff7029] hover:bg-orange-600 border-none text-white">LogOut</button>
 
-                    ) : (<Link to={"/auth/login"} className="btn bg-[#ff7029] border-none text-white">Login</Link>)
+                    ) : (<Link to={"/auth/login"} className="btn bg-[#ff7029] hover:bg-orange-600 border-none text-white">Login</Link>)
                 }
 
             </div>
