@@ -5,3 +5,11 @@
 .active {
   color: #ff7029;
 }
+
+.btn-danger {
+  @apply bg-red-600 hover:bg-[#ff7029] text-white;
+}
+
+.btn-success {
+  @apply bg-green-600 hover:bg-[#ff7029] text-white;
+}

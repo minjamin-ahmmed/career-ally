@@ -1,13 +1,15 @@
 import { useContext, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
-
+import Swal from "sweetalert2";
+import 'sweetalert2/src/sweetalert2.scss'
 
 const Registration = () => {
 
     const { createNewUser, user, setUser } = useContext(AuthContext)
 
     const [errorMessage, setErrorMessage] = useState('')
+    const [success, setSuccess] = useState(false)
 
     const handleSubmit = (event) => {
         event.preventDefault()
@@ -19,19 +21,65 @@ const Registration = () => {
         const photo = form.get("photo")
         const password = form.get("password")
 
+        setErrorMessage('')
+        setSuccess(false)
+
+
         if (password.length < 6) {
             setErrorMessage('Password Should be 6 characters or longer')
+            Swal.fire({
+                title: 'Error!',
+                text: 'Password Should be 6 characters or longer',
+                icon: 'error',
+                confirmButtonText: 'Cancel',
+                customClass: {
+                    confirmButton: 'btn btn-danger'
+                }
+            })
             return
         }
+
+
+        const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z]).*$/;
+        if (!passwordRegex.test(password)) {
+            setErrorMessage('Must contain both uppercase and lowercase letters')
+            Swal.fire({
+                title: 'Error!',
+                text: 'Must contain both uppercase and lowercase letters',
+                icon: 'error',
+                confirmButtonText: 'Cancel',
+                customClass: {
+                    confirmButton: 'btn btn-danger'
+                }
+            })
+            return
+        }
+
+
+
+
 
         createNewUser(email, password)
             .then(result => {
                 setUser(result.user)
                 console.log(result.user);
+                setSuccess(true)
+                Swal.fire({
+                    title: 'success!',
+                    text: 'Successfully Created Your Account',
+                    icon: 'success',
+                    confirmButtonText: 'Cancel',
+                    customClass: {
+                        confirmButton: 'btn btn-success'
+                    }
+                })
+
+
 
             })
             .catch(error => {
                 console.log("ERROR", error.message);
+                setSuccess(false)
 
             })
 
