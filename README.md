@@ -98,11 +98,11 @@ To get started with CareerAlly, follow these steps:
 
 ### **Homepage**
 
-![Homepage Screenshot](https://via.placeholder.com/800x400?text=Homepage+Screenshot)
+![Homepage Screenshot](https://i.ibb.co.com/9GfRGfj/Screenshot-2024-11-19-141202.png)
 
 ### **Service Details Page**
 
-![Service Details Screenshot](https://via.placeholder.com/800x400?text=Service+Details+Screenshot)
+![Service Details Screenshot](https://i.ibb.co.com/k61HRDG/Screenshot-2024-11-19-141132.png)
 
 ---
 
