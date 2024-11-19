@@ -6,7 +6,7 @@ Welcome to **CareerAlly**, an advanced platform designed to help individuals nav
 
 🌐 [Live Demo](https://career-ally.web.app/)
 
-📓 [Project Requirement Docs] - https://docs.google.com/document/d/1ErVVKPWEMzrmOn4bp18Vba0nfUpK-KZpqcTvSNffLKU/edit?tab=t.0
+📓 [Project Requirement Docs](https://docs.google.com/document/d/1ErVVKPWEMzrmOn4bp18Vba0nfUpK-KZpqcTvSNffLKU/edit?tab=t.0)
 
 ## Getting Started
 
