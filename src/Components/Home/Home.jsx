@@ -4,6 +4,7 @@ import ServicesSection from "../ServicesSection/ServicesSection";
 import Slider from "../Slider/Slider";
 import Popularity from "../Popularity/Popularity";
 import ClientReview from "../ClientReview/ClientReview";
+import { Helmet } from "react-helmet-async";
 
 
 const Home = () => {
@@ -15,6 +16,10 @@ const Home = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>Home - CareerAlly</title>
+                <meta name="description" content="Learn more about CareerAlly and our mission to empower individuals." />
+            </Helmet>
 
             <section>
                 <Slider></Slider>

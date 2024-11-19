@@ -4,7 +4,7 @@ import ServicesCard from "../ServicesCard/ServicesCard";
 
 const ServicesSection = ({ loadedData }) => {
 
-    console.log(loadedData);
+
 
 
 

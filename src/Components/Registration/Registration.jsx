@@ -6,6 +6,7 @@ import 'sweetalert2/src/sweetalert2.scss'
 import { FcGoogle } from "react-icons/fc";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import auth from "../../firebase/firebase.config";
+import { Helmet } from "react-helmet-async";
 
 const Registration = () => {
 
@@ -69,7 +70,7 @@ const Registration = () => {
                         navigate('/')
                     })
                     .catch(err => {
-                        console.log(err);
+
 
                     })
 
@@ -88,7 +89,7 @@ const Registration = () => {
 
             })
             .catch(error => {
-                console.log("ERROR", error.message);
+
                 setSuccess(false)
 
             })
@@ -102,11 +103,11 @@ const Registration = () => {
     const handleGoogleSignIn = () => {
         signInWithPopup(auth, provider)
             .then((result) => {
-                console.log(result.user)
+
             })
 
             .catch((error) => {
-                console.log("ERROR", error)
+
             })
     }
 
@@ -119,6 +120,11 @@ const Registration = () => {
 
     return (
         <div className="card w-full lg:w-[40%] mx-auto shrink-0 shadow-2xl rounded-xl  bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-5 border border-orange-400 lg:p-6">
+
+            <Helmet>
+                <title>Register - CareerAlly</title>
+                <meta name="description" content="Learn more about CareerAlly and our mission to empower individuals." />
+            </Helmet>
 
             <h1 className="text-2xl mt-5 px-5 lg:mt-0 lg:px-0 lg:text-4xl font-bold text-orange-600 text-center">Register Your Account</h1>
 

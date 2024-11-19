@@ -1,9 +1,14 @@
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 import 'animate.css';
+import { Helmet } from "react-helmet-async";
 
 const ContactUs = () => {
     return (
         <div className="min-h-screen bg-[#011b1c] text-white py-10 px-5">
+            <Helmet>
+                <title>Contact Us - CareerAlly</title>
+                <meta name="description" content="Learn more about CareerAlly and our mission to empower individuals." />
+            </Helmet>
             <div className="max-w-6xl mx-auto">
                 {/* Header */}
                 <div className="text-center mb-12">

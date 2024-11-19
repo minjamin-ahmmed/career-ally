@@ -7,6 +7,7 @@ import 'sweetalert2/src/sweetalert2.scss'
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { FcGoogle } from "react-icons/fc";
 import auth from "../../firebase/firebase.config";
+import { Helmet } from "react-helmet-async";
 
 
 const Login = () => {
@@ -16,7 +17,7 @@ const Login = () => {
     const location = useLocation()
     const navigate = useNavigate()
 
-    console.log(location)
+
 
     const handleSubmit = (event) => {
         event.preventDefault()
@@ -25,12 +26,12 @@ const Login = () => {
         const email = form.email.value
         const password = form.password.value
 
-        console.log(email, password);
+
 
         userLogin(email, password)
             .then(result => {
                 setUser(result.user)
-                console.log(result.user);
+
                 navigate(location?.state ? location.state : "/")
                 Swal.fire({
                     title: 'success!',
@@ -64,11 +65,11 @@ const Login = () => {
     const handlGoogleSignIn = () => {
         signInWithPopup(auth, provider)
             .then((result) => {
-                console.log(result.user)
+
             })
 
             .catch((error) => {
-                console.log("ERROR", error)
+
             })
     }
 
@@ -76,6 +77,11 @@ const Login = () => {
 
     return (
         <div className="card w-full lg:w-[40%] mx-auto shrink-0 shadow-2xl rounded-xl  bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-5 border border-orange-400 lg:p-6">
+
+            <Helmet>
+                <title>Login - CareerAlly</title>
+                <meta name="description" content="Learn more about CareerAlly and our mission to empower individuals." />
+            </Helmet>
 
             <h1 className="text-2xl mt-5 px-5 lg:mt-0 lg:px-0 lg:text-4xl font-bold text-orange-600 text-center">Login Into Your Account</h1>
 

@@ -1,13 +1,12 @@
 import { Link } from "react-router-dom";
-
+import 'animate.css';
 
 const ServicesCard = ({ data }) => {
 
     const { image, service_name, category, pricing, counselor, id } = data
 
     return (
-        <div className="space-y-2 bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 border border-gray-100 p-5 rounded-xl
-">
+        <div className="space-y-2 bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 border border-gray-100 p-5 rounded-xl animate__animated animate__zoomIn" style={{ animationDuration: '2s', animationDelay: '0.2s' }}>
             <div>
                 <img className="rounded-2xl" src={image} alt="" />
             </div>

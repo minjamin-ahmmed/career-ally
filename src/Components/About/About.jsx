@@ -6,6 +6,7 @@ import vissionImg from "../../assets/our-vision.jpg";
 // Import AOS
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { Helmet } from "react-helmet-async";
 
 const About = () => {
     // Initialize AOS when the component mounts
@@ -17,8 +18,16 @@ const About = () => {
         });
     }, []);
 
+
+
     return (
         <div className="min-h-screen bg-[#011B1c] text-white py-10 px-5">
+
+            <Helmet>
+                <title>About Us - CareerAlly</title>
+                <meta name="description" content="Learn more about CareerAlly and our mission to empower individuals." />
+            </Helmet>
+
             <div className="max-w-6xl mx-auto space-y-16">
                 {/* Hero Section */}
                 <section className="text-center" data-aos="fade-up">

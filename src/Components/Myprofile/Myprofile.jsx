@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { updateProfile } from "firebase/auth";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 const MyProfile = () => {
     const { user, loading } = useContext(AuthContext);
@@ -53,6 +54,10 @@ const MyProfile = () => {
 
     return (
         <div className="min-h-screen bg-[#011b1c] py-10 px-5">
+            <Helmet>
+                <title>My Profile - CareerAlly</title>
+                <meta name="description" content="Learn more about CareerAlly and our mission to empower individuals." />
+            </Helmet>
             <div className="max-w-4xl mx-auto bg-gray-400 rounded-xl bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 border border-[#ff7029] overflow-hidden">
                 <div className="flex flex-col lg:flex-row">
                     {/* Profile Picture */}
