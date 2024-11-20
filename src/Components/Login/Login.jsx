@@ -107,7 +107,7 @@ const Login = () => {
                 </div>
 
                 <div className="form-control mt-6">
-                    <button onClick={handlGoogleSignIn} className="btn bg-[#011b1c] font-bold text-[#ff7029] border border-[#ff7029]"> <FcGoogle className="text-lg" /> Login with Google</button>
+                    <NavLink to="/" onClick={handlGoogleSignIn} className="btn bg-[#011b1c] font-bold text-[#ff7029] border border-[#ff7029]"> <FcGoogle className="text-lg" /> Login with Google</NavLink>
                 </div>
 
 
