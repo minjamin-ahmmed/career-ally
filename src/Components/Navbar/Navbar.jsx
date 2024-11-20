@@ -37,6 +37,7 @@ const Navbar = () => {
                         {
                             user && <>
                                 <NavLink to="/myprofile">My Profile</NavLink>
+                                <NavLink to="/dashboard"> Dashboard </NavLink>
                             </>
                         }
 
@@ -53,6 +54,7 @@ const Navbar = () => {
                     {
                         user && <>
                             <NavLink to="/myprofile">My Profile</NavLink>
+                            <NavLink to="/dashboard"> Dashboard </NavLink>
                         </>
                     }
 
@@ -78,7 +80,7 @@ const Navbar = () => {
                 {
                     user && user?.email ? (
 
-                        <button onClick={logOut} className="btn bg-[#ff7029] hover:bg-orange-600 border-none text-white">LogOut</button>
+                        <NavLink to="/" onClick={logOut} className="border text-orange-600 border-orange-600 btn bg-transparent hover:bg-orange-600 hover:text-white hover:border-none">LogOut</NavLink>
 
                     ) : (<Link to={"/auth/login"} className="btn bg-[#ff7029] hover:bg-orange-600 border-none text-white">Login</Link>)
                 }

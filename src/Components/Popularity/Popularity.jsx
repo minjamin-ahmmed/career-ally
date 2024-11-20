@@ -35,11 +35,11 @@ const Popularity = () => {
                 milestones that define our journey of excellence in career counseling.
             </p>
 
-            <div className="bg-gray-500 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-5 border border-gray-100 shadow-lg mt-10 p-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-10">
+            <div className="bg-[#011B1C] rounded-lg bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-5 border border-gray-100 shadow-lg mt-10 p-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-10">
                 {milestones.map((milestone, index) => (
                     <motion.div
                         key={milestone.id}
-                        className="bg-gray-900 rounded-xl bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-5 border-2 border-[#ff7029] shadow-lg p-6"
+                        className="bg-[#011B1C] rounded-xl bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-5 border-2 border-[#ff7029] shadow-lg p-6"
                         custom={index}
                         variants={cardVariants}
                         initial="hidden"

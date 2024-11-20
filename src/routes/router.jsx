@@ -12,6 +12,7 @@ import Registration from "../Components/Registration/Registration";
 import PrivateRoute from "./PrivateRoute";
 import Myprofile from "../Components/Myprofile/Myprofile";
 import ForgetPassword from "../Components/ForgetPassword/ForgetPassword";
+import Dashboard from "../Components/Dashboard/Dashboard";
 
 const router = createBrowserRouter([
     {
@@ -40,6 +41,10 @@ const router = createBrowserRouter([
             {
                 path: "/myprofile",
                 element: <Myprofile></Myprofile>,
+            },
+            {
+                path: "/dashboard",
+                element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>
             },
 
             {
@@ -75,11 +80,6 @@ const router = createBrowserRouter([
         ]
 
     },
-
-
-
-
-
 
 ])
 

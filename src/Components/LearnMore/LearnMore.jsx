@@ -68,7 +68,7 @@ const LearnMore = () => {
                         onClick={handleCommentSubmit}
                         className="bg-[#ff7029] text-white px-5 py-3 rounded-md hover:bg-orange-600 transition"
                     >
-                        Comment/Feedback
+                        Feedback
                     </button>
                 </div>
 
