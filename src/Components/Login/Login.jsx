@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 
@@ -14,6 +14,7 @@ const Login = () => {
 
 
     const { userLogin, setUser } = useContext(AuthContext)
+    const [emailInput, setEmailInput] = useState("")
     const location = useLocation()
     const navigate = useNavigate()
 
@@ -90,7 +91,7 @@ const Login = () => {
                     <label className="label">
                         <span className="label-text text-white">Email</span>
                     </label>
-                    <input name="email" type="email" placeholder="email" className="input input-bordered" required />
+                    <input onChange={(event) => setEmailInput(event.target.value)} name="email" type="email" placeholder="email" className="input input-bordered" required />
                 </div>
                 <div className="form-control">
                     <label className="label">
@@ -98,7 +99,7 @@ const Login = () => {
                     </label>
                     <input name="password" type="password" placeholder="password" className="input input-bordered" required />
                     <label className="label">
-                        <a href="#" className="label-text-alt link link-hover text-gray-400">Forgot password?</a>
+                        <NavLink to={`/auth/forget-password?email=${encodeURIComponent(emailInput)}`} className="label-text-alt link link-hover text-gray-400">Forgot password?</NavLink>
                     </label>
                 </div>
                 <div className="form-control mt-6">

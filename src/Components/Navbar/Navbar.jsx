@@ -8,7 +8,6 @@ const Navbar = () => {
     const { user, logOut } = useContext(AuthContext)
 
 
-
     return (
         <div className="navbar bg-[#011b1cf1] backdrop-blur-lg lg:px-10 lg:py-5">
             <div className="navbar-start">

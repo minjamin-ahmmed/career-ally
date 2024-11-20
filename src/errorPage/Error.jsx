@@ -1,9 +1,20 @@
 import { Link } from "react-router-dom";
 import errorImg from "../../src/assets/Untitled design (1).png"
+import { Helmet } from "react-helmet-async";
 
 const Error = () => {
+
+
     return (
         <div className="min-h-screen flex flex-col items-center justify-center bg-[#011b1c] text-white">
+
+            <Helmet>
+                <title>Error!!</title>
+                <meta
+                    name="description"
+                    content="Learn more about CareerAlly and our mission to empower individuals."
+                />
+            </Helmet>
             {/* Illustration */}
             <div className="text-center w-[300px] h-[300px]">
                 <img

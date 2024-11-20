@@ -9,6 +9,7 @@ const ContactUs = () => {
                 <title>Contact Us - CareerAlly</title>
                 <meta name="description" content="Learn more about CareerAlly and our mission to empower individuals." />
             </Helmet>
+
             <div className="max-w-6xl mx-auto">
                 {/* Header */}
                 <div className="text-center mb-12">

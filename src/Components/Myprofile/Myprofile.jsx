@@ -4,7 +4,7 @@ import { updateProfile } from "firebase/auth";
 import Swal from "sweetalert2";
 import { Helmet } from "react-helmet-async";
 
-const MyProfile = () => {
+const Myprofile = () => {
     const { user, loading } = useContext(AuthContext);
 
     const [name, setName] = useState(user?.displayName || "");
@@ -56,7 +56,10 @@ const MyProfile = () => {
         <div className="min-h-screen bg-[#011b1c] py-10 px-5">
             <Helmet>
                 <title>My Profile - CareerAlly</title>
-                <meta name="description" content="Learn more about CareerAlly and our mission to empower individuals." />
+                <meta
+                    name="description"
+                    content="Learn more about CareerAlly and our mission to empower individuals."
+                />
             </Helmet>
             <div className="max-w-4xl mx-auto bg-gray-400 rounded-xl bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 border border-[#ff7029] overflow-hidden">
                 <div className="flex flex-col lg:flex-row">
@@ -101,7 +104,10 @@ const MyProfile = () => {
 
                             {/* Name Field */}
                             <div>
-                                <label htmlFor="name" className="block text-white font-medium mb-1">
+                                <label
+                                    htmlFor="name"
+                                    className="block text-white font-medium mb-1"
+                                >
                                     Name
                                 </label>
                                 <input
@@ -109,13 +115,13 @@ const MyProfile = () => {
                                     type="text"
                                     value={name}
                                     onChange={(e) => setName(e.target.value)}
-                                    className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+                                    className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 truncate"
                                     placeholder="Enter your name"
                                 />
                             </div>
 
                             {/* Photo URL Field */}
-                            <div>
+                            <div className="overflow-x-auto">
                                 <label
                                     htmlFor="photoURL"
                                     className="block text-white font-medium mb-1"
@@ -127,7 +133,11 @@ const MyProfile = () => {
                                     type="text"
                                     value={photoURL}
                                     onChange={(e) => setPhotoURL(e.target.value)}
-                                    className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+                                    className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 truncate overflow-x-auto"
+                                    style={{
+                                        wordBreak: "break-all", // Breaks long words
+                                        overflowWrap: "anywhere", // Ensures URLs wrap properly
+                                    }}
                                     placeholder="Enter photo URL"
                                 />
                             </div>
@@ -149,4 +159,4 @@ const MyProfile = () => {
     );
 };
 
-export default MyProfile;
+export default Myprofile;

@@ -2,6 +2,9 @@ import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndP
 import { createContext, useEffect, useState } from "react";
 import auth from "../firebase/firebase.config";
 
+import { Bounce, ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 export const AuthContext = createContext()
 
 const AuthProvider = ({ children }) => {
@@ -17,8 +20,21 @@ const AuthProvider = ({ children }) => {
         return createUserWithEmailAndPassword(auth, email, password)
     }
 
+    const notify = () => toast.success('Successfully Logged Out', {
+        position: "top-center",
+        autoClose: 1000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        transition: Bounce,
+    });
+
     const logOut = () => {
         setLoading(true)
+        notify()
         return signOut(auth)
     }
 
@@ -62,6 +78,7 @@ const AuthProvider = ({ children }) => {
         <AuthContext.Provider value={authInfo}>
 
             {children}
+            <ToastContainer />
 
         </AuthContext.Provider>
     );

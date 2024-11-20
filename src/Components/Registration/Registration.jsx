@@ -7,6 +7,7 @@ import { FcGoogle } from "react-icons/fc";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import auth from "../../firebase/firebase.config";
 import { Helmet } from "react-helmet-async";
+import { FaEyeSlash, FaRegEye } from "react-icons/fa";
 
 const Registration = () => {
 
@@ -14,6 +15,7 @@ const Registration = () => {
 
     const [errorMessage, setErrorMessage] = useState('')
     const [success, setSuccess] = useState(false)
+    const [showPassword, setShowPassword] = useState(false)
 
     const navigate = useNavigate()
 
@@ -51,7 +53,7 @@ const Registration = () => {
             setErrorMessage('Must contain both uppercase and lowercase letters')
             Swal.fire({
                 title: 'Error!',
-                text: 'Must contain both uppercase and lowercase letters',
+                text: 'Password must contain both uppercase and lowercase letters',
                 icon: 'error',
                 confirmButtonText: 'Cancel',
                 customClass: {
@@ -152,11 +154,25 @@ const Registration = () => {
 
 
 
-                <div className="form-control">
+                <div className="form-control relative">
                     <label className="label">
                         <span className="label-text text-white">Password</span>
                     </label>
-                    <input name="password" type="password" placeholder="password" className="input input-bordered" required />
+                    <input name="password" type={showPassword ? 'text' : 'password'} placeholder="password" className="input input-bordered relative" required />
+
+                    <label className="label">
+                        <button
+                            onClick={() => setShowPassword(!showPassword)}
+                            className="absolute right-4 bottom-8">
+
+                            {
+                                showPassword ? <FaRegEye /> : <FaEyeSlash />
+                            }
+
+                        </button>
+
+                    </label>
+
                 </div>
                 <div className="form-control mt-6">
                     <button className="btn bg-[#ff7029] border-none font-bold text-white">Register</button>
