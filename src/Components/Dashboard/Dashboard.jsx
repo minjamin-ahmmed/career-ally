@@ -5,7 +5,6 @@ import { useContext } from 'react';
 const Dashboard = () => {
     const { user } = useContext(AuthContext);
 
-    // Dummy data for demonstration purposes
     const userInfo = {
         name: user?.displayName || 'John Doe',
         role: 'Counselee',
@@ -28,7 +27,7 @@ const Dashboard = () => {
 
     return (
         <div className="w-full mx-auto p-6 bg-[#011b1c]">
-            <h1 className="text-3xl font-bold text-[#FF7029]">Welcome, {userInfo.name}</h1>
+            <h1 className="text-3xl font-bold text-[#FF7029]">Welcome, <span className='text-green-600'>{userInfo.name}</span></h1>
 
             {/* Career Overview */}
             <div className="my-6 p-4 bg-[#011B1C] rounded-lg shadow-md">
@@ -62,7 +61,7 @@ const Dashboard = () => {
                 </div>
             </div>
 
-            {/* Upcoming Counseling Sessions */}
+
             <div className="my-6 p-4 bg-[#011B1C] rounded-lg shadow-md">
                 <h2 className="text-2xl font-semibold text-[#FF7029]">Upcoming Counseling Sessions</h2>
                 {upcomingSessions.length > 0 ? (
@@ -80,13 +79,12 @@ const Dashboard = () => {
                 )}
             </div>
 
-            {/* Recommended Resources */}
-            <div className="my-6 p-4 bg-[#011B1C] rounded-lg shadow-md">
+            <div className="my-6 p-4 rounded-lg shadow-md">
                 <h2 className="text-2xl font-semibold text-white">Recommended Resources</h2>
                 <ul className="mt-4 space-y-2">
                     {recommendedResources.map((resource, index) => (
                         <li key={index}>
-                            <Link to={resource.link} className="text-gray-400 hover:underline">
+                            <Link to={resource.link} className="text-blue-600 hover:underline">
                                 {resource.title}
                             </Link>
                         </li>
