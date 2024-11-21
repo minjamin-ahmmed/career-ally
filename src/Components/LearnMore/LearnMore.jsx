@@ -42,7 +42,7 @@ const LearnMore = () => {
             <p className="text-gray-400 lg:w-[80%] mx-auto text-center">Explore our comprehensive career counseling services designed to help you identify your strengths, overcome challenges, and achieve your professional goals. From resume building and interview preparation to personalized career planning, our experts are here to guide you every step of the way. Let us help you pave the path to a fulfilling and successful career.</p>
 
             <div className="mt-5 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 lg:gap-10 rounded-xl  bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 border border-gray-100 p-6">
-                <div className="p-6 border border-orange-600 backdrop-blur-xl rounded-xl shadow-2xl">
+                <div className="p-6 border border-orange-600 rounded-xl shadow-2xl">
                     <img className="rounded-2xl w-full md:h-full md:object-cover" src={image} alt="" />
                 </div>
                 <div>
